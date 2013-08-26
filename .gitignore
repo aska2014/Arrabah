@@ -1,0 +1,9 @@
+/bootstrap/compiled.php
+/vendor
+/design
+/public
+/.idea
+social_info.txt
+composer.phar
+composer.lock
+.DS_Store
