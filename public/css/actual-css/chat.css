@@ -1,0 +1,33 @@
+.chat-holder{margin:20px; padding:0px;}
+.chat{border:1px solid #555; background: #F9F9F9;}
+
+.tabs{width:693px;}
+.tab{margin-right:10px; position: relative; top:1px; padding:10px 10px 10px 0px; border-radius: 10px 10px 0px 0px; font-size: 12px; float:left; background: #333; color:#FFF; cursor: pointer; }
+.tab .close{color:#666; cursor: pointer; padding:10px 5px; border-radius: 8px 0px 0px 0px;}
+.tab .close:hover{color:#FFF; background: #900;}
+.active-tab, .tab:hover{ background: #F1F1F1; border:1px solid #333; border-bottom:0px; color:#333;}
+.new-tab{ background: #E04322; color:#FFF; font-weight: bold; }
+.new-tab .close{color:#FFF;}
+
+.chat .filter{width:170px; float:right; border-left:1px solid #555; background: #F1F1F1; box-shadow: -5px 0px 5px #DDD;}
+.chat .family-slct{width:85%; margin:10px;}
+	.filter .family-filter{ height:50px; border-bottom:1px solid #555; }
+	.filter .members-filter{height: 500px; overflow-y:scroll;}
+		.member-filter{padding:10px 5px 10px 0px; height:40px; border-bottom:1px solid #BBB;}
+		.member-filter:hover{background:#E2E2E2; cursor: pointer;}
+		.member-filter img{float:right; width:40px; height:40px; margin-left:10px; border:1px solid #333;}
+		.member-filter .name{color:#900; font-weight: bold; font-size: 12px; position:relative; top:15px;}
+
+.chat-form{width:520px; float:right;}
+.chat-form .txtarea{width:440px; height:50px; padding:5px; float:right; border:1px solid #333; border-bottom:0px; border-right:0px; }
+.chat-form .sbmt{width:69px; height:62px; border:0px; background:#333; padding:0px; color:#FFF; cursor: pointer;}
+
+.chat-body{ float:right; width:520px; display: none; }
+.active-tab-body{display: block;}
+.chat-body .top-body{padding: 10px; float: right; width:500px; height:20px; background:#F1F1F1;border-bottom: 1px solid #BBB; }
+.chat-body .top-body span{ color:#900; }
+.chat-body .messages{height:450px; overflow-y: scroll; background: #FFF;}
+.chat-body .message{width:480px; padding:10px 10px 10px 10px; margin-top:10px; border-bottom:1px solid #DDD;}
+.chat-body .member{}
+.chat-body .member img{float:right; width:40px; height: 40px; margin-left:10px; border: 1px solid #333;}
+.chat-body .member .name{color:#900; font-weight: bold; font-size: 12px; position: relative; top:15px;}

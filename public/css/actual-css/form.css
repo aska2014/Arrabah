@@ -1,0 +1,59 @@
+.box-form .form-row{float:right; width:100%; margin-bottom:10px;}
+.box-form .form-row .key{float:right; width:100px; position: relative; top:5px; text-align: left; margin-left: 10px; font-weight: bold; font-size: 12px;}
+.box-form .form-row .value{float:right;}
+.box-form .form-row .txt{padding:5px; border:1px solid #BBB; width:200px;}
+.box-form .form-row .txtarea{padding:5px; border:1px solid #BBB; width:380px; height:100px;}
+.box-form .form-row .slct{padding:3px; font-family: tahoma;}
+.box-form .form-row .info{margin:7px 7px; float:right; font-size:12px; color:#999;}
+.box-form .buttons .sbmt{float:left; border:0px; cursor: pointer; width:88px; height:28px; border-radius: 10px; background:url('images/add-button.png'); font-size:14px;}
+.box-form .buttons .message-btn{float:left; border:0px; cursor: pointer; width:88px; height:28px; border-radius: 5px; background:url('images/message-button.jpg'); font-size:14px;}
+.box-form .buttons .sbmt:hover{background: url('images/add-button-hover.png')}
+.box-form .form-row .txt, .box-form .form-row .txtarea{
+background: rgb(255,255,255); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(239,239,239,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(239,239,239,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(239,239,239,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#efefef',GradientType=0 ); /* IE6-9 */
+}
+
+.form-big{ padding:10px; margin-left:0px; float:right; width:560px; margin-right:10px; width:680px;}
+
+.box-form .form-section{margin-top:10px; background:#EEE; border-radius: 7px 7px 0px 0px; border:1px solid #DDD;}
+.box-form .form-section-all{margin-top:10px; background: #EEE; border-radius: 7px;}
+.box-form .form-title{padding:10px; color:#FFF; background:#333; border-radius: 5px 5px 0px 0px; font-weight: bold;}
+.box-form .add-image{font-size:12px; padding:8px 15px; background:#333; color:#EEE; font-weight: bold; line-height: 35px; position: relative; bottom:3px; border-radius: 0px 0px 5px 5px; border-top:0px;}
+.box-form .gallery-images-form{padding:25px 10px;background:#EEE;border:1px solid #DDD;  border-radius: 0px 0px 0px 5px; }
+.box-form .file{margin-top:10px;}
+.box-form .form-row-title{padding:10px 10px; color:#FFF; background: #333; font-weight: bold;}
+.box-form .form-row-title small{font-size:12px; color:#AAA; font-weight: normal;}
+
+#progressContainer{text-align: center; padding:10px 140px 20px 0px; display: none;}
+.progress { position:relative; width:400px; border: 1px solid #ddd; padding: 1px; border-radius: 3px; }
+.bar { background-color: #B4F5B4; width:0%; height:20px; border-radius: 3px; }
+.percent { position:absolute; display:inline-block; top:3px; left:48%; }
+
+.section-hidden{display: none;}
+.padding-section{padding:30px 20px;}
+.no-border{border:0px;}
+
+
+
+.main-form{ font-family: Tahoma; }
+.main-form .form-header{margin-top:60px;  padding:10px 20px;  font-size: 14px; font-weight: bold; 
+	 border:1px solid #AAA; background: #EAEAEA; color:#333; border-right: 0px; border-left: 0px;}
+.main-form .row{width:100%; padding-right:30px; margin-top:15px; font-size:13px;}
+.main-form .row .label{width:100px; float:right; margin-top:4px; text-align: left; margin-left:10px;}
+.main-form .row .right{float:right;}
+.main-form .row .left{float:right;}
+.main-form .row .all{width:100%;}
+.main-form hr{border:0px; border-top:1px solid #CCC; width:95%; text-align: center; box-shadow: 0px 0px 5px #BBB; }
+.main-form .slct, .main-form .txt{width:180px; float:right; padding:3px 5px; color:#666; border:1px solid #BBB;}
+.main-form .slct{width:192px;}
+.main-form .txtarea{}
+.main-form .buttons{ border-top:1px solid #DDD; margin-bottom:15px; padding-top:10px; width:700px; }
+.main-form .buttons .register-btn{ margin-left:20px; }
+.main-form a{color:#900;}
+.main-form .row .info{float:left; font-size:11px; color:#999;}
