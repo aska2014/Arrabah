@@ -43,7 +43,9 @@
 						<div class="key">أسم الجد:</div><div class="value">{{ $profileUser->grand_father_name }}</div>
 					</div>
 					<div class="left-row">
+                        @if($profileUser->family)
 						<div class="key">أسم العائلة:</div><div class="value">{{ $profileUser->family->name }}</div>
+                        @endif
 					</div>
 				</div>
 

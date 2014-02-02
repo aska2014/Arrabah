@@ -44,7 +44,11 @@
 				</form>
 			</div>
 			@else
+            @if($authUser->family)
 			<h2 class="title-font">مرحباً {{ $authUser->first_name }} {{ $authUser->family->name }}</h2>
+            @else
+            <h2 class="title-font">مرحباً {{ $authUser->first_name }}</h2>
+            @endif
 			<div id="top-header-account">
 
 				<ul>

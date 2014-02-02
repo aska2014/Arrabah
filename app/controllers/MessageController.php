@@ -62,7 +62,6 @@ class MessageController extends BaseController {
 
 			return Redirect::route('compose')->withInput()->with('errors', 'يجب إختيار العضو.');
 
-
 		// Create new message and send it to the inputed user.
 		with(new Message( $inputs ))->send(Auth::user(), $to);
 

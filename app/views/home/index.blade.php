@@ -5,7 +5,27 @@
 @if($homeWelcome && $homeContent = $homeWelcome->placeable)
 <div class="white-box hello-box">
 	<h2 class="title title-font">{{ $homeContent->title }}</h2>
-	<p class="nice-font" style="height:142px; overflow:hidden">{{ Str::limit($homeContent->description, 730) }}</p>
+
+    <p class="nice-font new-home" style="height:160px; overflow:hidden">
+        <em>( و اعتصموا بحبل الله جميعا و لا تفرقوا )</em>
+
+        <b>يسرنى </b>
+
+        أن اتقدم نيابة عن الاخوة من أبناء عرابه فى المملكة العربية السعودية و رئيس و اعضاء رابطة أبناء عرابه فى المملكة العربية الاردنية الهاشمية بالتحية و التقدير الى جميع ابناء عرابه فى الوطن و المهجر.
+        أخوانى اهالى عرابه الكرام, ان فكرة انشاء هذا الموقع كان الهدف الاساسى منه العمل على تنمية او مساعدة اهلنا فى عرابه و المهجر اينما كانوا و لم شملهم فى موقع الكترونى يكون مرجعا لكامل ابناء عرابه أينما وجدوا.
+        و ان هذا الموقع يتيح للجميع التسجيل فى رابطة أبناء عرابه فى الاردن و الذى من خلال الانضمام الى الرابطة سوف يكون له الاثر الكبير فى العمل على مساعدة أبناء عرابه فى المهجر أينما كانوا.
+        ان انضمامكم الى هذا الموقع يعبر بالاكيد عن انتمائكم و ولائكم لبلدنا الحبيب عرابه.
+        الموقع الرسمى لاهالى عرابه فى الوطن و المهجر
+
+
+
+        <b> www.arrabah.net</b><br />
+
+        <strong>
+            <b>أخوكم \</b>
+            محمود غالب موسى</strong>
+
+    </p>
 
 	@if($welcomePage = $homeWelcome->page)
 	<a href="{{ URL::page($welcomePage) }}"><div class="grey-more nice-font">المزيد</div></a>
@@ -94,7 +114,9 @@
 					<div class="slide">
 						<p class="nice-font" style="width:200px; float:right;">
 							<b>الأسم: </b> <span class="user-value">{{ $user->first_name }}</span><br />
+                            @if($user->family)
 							<b>العائلة: </b> <span class="user-value">{{ $user->family->name }}</span><br /><br />
+                            @endif
 							<b style="color:#900;">معلومات التواصل</b><br />
 							<b>الإيميل: </b> <span class="user-value" style="font-size:12px;">{{ $user->email }}</span><br />
 							<b>الدولة: </b> <span class="user-value">{{ $user->city->getCountry()->arabic }}</span><br />
