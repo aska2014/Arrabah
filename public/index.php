@@ -7,9 +7,6 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 
-echo 'test';
-exit();
-
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
@@ -23,6 +20,9 @@ exit();
 */
 
 require __DIR__.'/../bootstrap/autoload.php';
+
+echo 'test1';
+exit();
 
 /*
 |--------------------------------------------------------------------------
