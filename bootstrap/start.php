@@ -46,9 +46,6 @@ $env = $app->detectEnvironment(array(
 
 $app->bindInstallPaths(require __DIR__.'/paths.php');
 
-echo 'test2';
-exit();
-
 /*
 |--------------------------------------------------------------------------
 | Load The Application
