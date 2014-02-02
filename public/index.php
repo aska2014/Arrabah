@@ -21,9 +21,6 @@
 
 require __DIR__.'/../bootstrap/autoload.php';
 
-echo 'test1';
-exit();
-
 /*
 |--------------------------------------------------------------------------
 | Turn On The Lights
@@ -37,6 +34,9 @@ exit();
 */
 
 $app = require_once __DIR__.'/../bootstrap/start.php';
+
+echo 'test1';
+exit();
 
 /*
 |--------------------------------------------------------------------------
