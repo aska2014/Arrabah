@@ -138,12 +138,6 @@
 					<select class="special basic-select" id="city-slct" target="region-slct" name="Address[city]" value="{{ Input::old('Address.city') }}">
 						<option value=""></option>
 					</select>
-				</div>	
-				
-				<div id="region-slct-div">
-					<select class="special basic-select" id="region-slct" name="Address[region]" value="{{ Input::old('Address.region') }}">
-						<option value=""></option>
-					</select>
 				</div>
 			</div>
 			<div class="clr"></div>
@@ -188,12 +182,13 @@
 			
 			<div class="row">
 				<div class="all">
-					<input type="text" class="txt" name="Register[spam-check]" />
-					<div class="info" style="float:right; padding:10px;">
-						لا يمكنك قرائة الرمز؟ أضغط <a href='javascript: refreshCaptcha();'>هنا</a> لتحميل رمز جديد
-					</div>
+					<div style="float:right; padding:5px;">{{ $random[0] }} + {{ $random[1] }} = </div>
+                    <input type="text" class="txt" name="Register[spam-check]" style="width:60px;" />
+<!--					<div class="info" style="float:right; padding:10px;">-->
+<!--						لا يمكنك قرائة الرمز؟ أضغط <a href='javascript: refreshCaptcha();'>هنا</a> لتحميل رمز جديد-->
+<!--					</div>-->
 					<div class="clr"></div>
-					<img src="{{ URL::route('request-captcha', array(rand())) }}" id='captchaimg'>
+<!--					<img src="{{ URL::route('request-captcha', array(rand())) }}" id='captchaimg'>-->
 				</div>
 			</div>
 			<div class="clr"></div>

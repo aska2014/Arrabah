@@ -56,9 +56,21 @@ class MemberShowController extends BaseController {
 
 	public function families()
 	{
-		$families = Family::paginate( 12 );
+		$families = Family::all();
+//
+//        $tt = 'أاإآ,ب,ت,ث,ج,ح،خ،د،ذ،ر،ز,س،ش،ص،ض،طـ،ظ،ع،غ،ف،ق،ك،ل،م،ن،ه،و،ي';
+//
+//        $families->sort(function($a, $b) use($tt)
+//        {
+//            $a1 = substr($a->name, 0, 1);
+//            $b1 = substr($b->name, 0, 1);
+//
+//            return strpos($tt, $a1) >= strpos($tt, $b1);
+//        });
 
-		return View::make('families.index', compact('families'));
+        $tolt = ceil($families->count() / 3);
+
+		return View::make('families.design2', compact('families', 'tolt'));
 	}
 
 
@@ -88,11 +100,11 @@ class MemberShowController extends BaseController {
 	{
 		$family = Family::findOrFail( $id );
 
-		$familyUsers = $this->filterUsers($family->users())->paginate( 12 );
+		$familyUsers = $this->filterUsers($family->users())->with('family')->get();
 
 		$membersTitle = $family->name;
 
-		return View::make('families.members', compact('familyUsers', 'membersTitle'));
+		return View::make('families.members3', compact('familyUsers', 'membersTitle'));
 	}
 
 

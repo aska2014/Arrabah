@@ -87,6 +87,12 @@ class Job extends Eloquent implements AcceptableInterface, OwnedByUserInterface 
         return $query->where('accepted', true);
     }
 
+
+    public static function byTitle($query, $title)
+    {
+        return $query->where('title', 'like', "%$title%")->orWhere('description', 'like', "%$title%");
+    }
+
     /**
      * Get latest event
      *

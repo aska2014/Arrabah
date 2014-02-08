@@ -25,7 +25,7 @@ class Helper {
 
 			static::$instance = new Helper;
 
-		return $instance;
+		return static::$instance;
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Helper {
 	 */
 	public function replaceAll( $string, $replacers )
 	{
-		foreach ($replaces as $key => $value)
+		foreach ($replacers as $key => $value)
 		{
 			$string = str_replace('{' . $key . '}', $value, $string);
 		}

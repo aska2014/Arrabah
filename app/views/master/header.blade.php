@@ -86,13 +86,19 @@
 						<input type="submit" value="" class="search-btn" />
 					</form>
 				</div>
+                <div class="down-search" style="color:#FFF; font-size:12px;">
+                    <a href="{{ URL::route('search.members') }}">
+                    بحث متقدم
+                    </a>
+                </div>
 			</div>
 		</div><!-- END of middle-header -->
 
 		<div id="bottom-header">
 			<div id="header-menu">
 				<ul>
-					<li><a href="{{ URL::route('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ URL::route('home') }}">الرئيسية</a></li>
+                    <li><a href="{{ URL::route('introduction') }}">المقدمة</a></li>
 					@if($aboutPage)
 					<li>
 						<a href="{{ URL::page($aboutPage) }}">{{ $aboutPage->title }}</a>
@@ -113,7 +119,6 @@
 						<ul>
 							<li><a href="{{ URL::route('premium-members') }}">أعضاء مشاركين</a></li>
 							<li><a href="{{ URL::route('normal-members') }}">أعضاء شرف</a></li>
-							<li><a href="{{ URL::route('arrabah-members') }}">أبناء البلد</a></li>
 						</ul>
 					</li>
 					@if($authUser)
@@ -121,7 +126,12 @@
 					@else
 					<li><a href="{{ URL::route('register') }}">التسجيل</a></li>
 					@endif
-					<li><a href="{{ URL::route('jobs') }}">وظائف</a></li>
+					<li><a href="#">وظائف</a>
+                        <ul>
+                            <li><a href="{{ URL::route('jobs') }}">وظائف شاغرة</a></li>
+                            <li><a href="{{ URL::route('search.jobs') }}">بحث عن عمل</a></li>
+                        </ul>
+                    </li>
 					<li><a href="{{ URL::route('contact-us') }}">اتصل بنا</a></li>
 				</ul>
 			</div>

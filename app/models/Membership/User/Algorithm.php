@@ -57,6 +57,22 @@ class Algorithm extends MainAlgorithm {
 					 
 	}
 
+
+    public static function name($query, $first_name, $father_name, $family_name)
+    {
+        return $query->join('families', 'users.family_id', '=', 'families.id')
+            ->where(function($query) use ($first_name, $father_name, $family_name)
+            {
+                if($first_name) $query->where('first_name', 'like', '%' . $first_name . '%');
+
+                if($father_name) $query->where('father_name', 'like', '%' . $father_name . '%');
+
+                if($family_name) $query->where('families.name', 'like', '%' . $family_name . '%');
+
+                return $query->select('users.*')->distinct();
+            });
+    }
+
 	public static function premium( $query )
 	{
 		return $query->where('type', User::PREMIUM);

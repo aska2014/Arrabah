@@ -18,47 +18,28 @@
 
     </div>
 
-    <div class="all">
-
+    <ul class="family-users">
         @foreach($familyUsers as $user)
-        <div class="boxgrid caption">
-            <div class="user-stars">
-                @if($user->fromArrabah())
-                <div class="green-star user-star" tip="هذا العضو من أبناء البلد"></div>
-                @endif
-                @if($user->isPremium())
-                <div class="red-star user-star" tip="هذا العضو مشترك فى رابطة عرابة"></div>
-                @endif
-            </div>
+        <li>
             <a href="{{ URL::profile($user) }}">
-                @if($user->profileImage)
-                <img src="{{ $user->profileImage->getUrl( 145, 145 ) }}" width="145" height="145"/>
-                @else
-                <img src="{{ AlbumsManager::defaultImage('user.profile') }}" width="145" height="145"/>
-                @endif
+                {{ $user->first_name }} {{ $user->father_name }} {{ $user->family->name }}
             </a>
 
-            <div class="cover boxcaption">
-                <p>{{ $user->first_name }} - {{ $user->father_name }}<br/></p>
-            </div>
-        </div>
+            <strong>
+            {{ $user->telephone_no }}
+            </strong>
+        </li>
         @endforeach
-
-        <div class="clr"></div>
-
-    </div>
-</div><!-- END of white-box -->
-
-
-<div class="pages">
-    <ul>
-        {{ $familyUsers->links() }}
-
-        <!-- <li><a href="#" class="active">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li> -->
     </ul>
-</div>
+
+    <style type="text/css">
+        .family-users li{margin-bottom:10px;}
+        .family-users a{color:#900;}
+        .family-users strong{font-size:12px; display: block; line-height: 28px;}
+    </style>
+
+    <div class="clr"></div>
+</div><!-- END of white-box -->
 @stop
 
 @section('scripts')

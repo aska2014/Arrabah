@@ -54,7 +54,7 @@ View::composer(array('register.index'), function( $view )
 	Asset::addPlugins(array('picker', 'select2'));
 });
 
-View::composer(array('login.index', 'login.reminder', 'login.reset'), function( $view )
+View::composer(array('login.index', 'login.reminder', 'login.reset', 'search.members', 'search.jobs'), function( $view )
 {
 	Asset::addPage('form');
 });
@@ -145,7 +145,7 @@ View::composer(array('messages.index', 'messages.one'), function( $view )
 
 
 
-View::composer(array('families.index', 'families.members', 'families.members2'), function( $view )
+View::composer(array('families.index', 'families.members', 'families.members2', 'families.members3'), function( $view )
 {
 	Asset::addPlugin('select2');
 });

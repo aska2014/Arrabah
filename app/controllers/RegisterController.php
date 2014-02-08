@@ -27,7 +27,12 @@ class RegisterController extends BaseController{
 
 		$families = Family::getAccepted();
 
-		return View::make('register.index', compact('postRegister', 'cities', 'families'));
+        $random = array(rand(1, 10), rand(1, 10));
+
+        Session::put('random_1', $random[0]);
+        Session::put('random_2', $random[1]);
+
+		return View::make('register.index', compact('postRegister', 'cities', 'families', 'random'));
 	}
 
 	/**
@@ -136,10 +141,19 @@ class RegisterController extends BaseController{
 	 */
 	private function spamCheck( $input )
 	{
-		if( !Captcha::validate( $input )) {
-
+        if((Session::get('random_1') + Session::get('random_2')) != $input)
+        {
 			$this->errors[] = 'إجابة سؤال التأكيد غير صحيحة.';
-		}
+        }
+
+        Session::forget('random_1');
+        Session::forget('random_2');
+
+
+//		if( !Captcha::validate( $input )) {
+//
+//			$this->errors[] = 'إجابة سؤال التأكيد غير صحيحة.';
+//		}
 	}
 
 	/**

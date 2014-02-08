@@ -28,7 +28,6 @@ $(document).ready(function()
 	$("#family-slct").select2({placeholder: 'أسم العائلة'});
 	$("#country-slct").select2({placeholder: 'أسم الدولة'});
 	$("#city-slct").select2({placeholder: 'أسم المدينة'});
-	$("#region-slct").select2({placeholder: 'أسم المنطقة'});
 
 
 	$("#sex-slct").select2('val', "{{ Input::old('Register.sex') }}");
@@ -55,16 +54,6 @@ $(document).ready(function()
 				showSlct( $("#city-slct") );
 				$("#city-slct").select2("val", "{{ Input::old('Address.city') }}");
 				console.log("Select2 city {{ Input::old('Address.city') }}");
-
-				loadTarget( $("#city-slct"), $("#" + $("#city-slct").attr('target')), function()
-				{
-					@if(Input::old('Address.region'))
-
-						showSlct( $("#region-slct") );
-						$("#region-slct").select2('val', "{{ Input::old('Address.region') }}", function(){});
-
-					@endif
-				});
 
 			@endif
 		});
@@ -175,10 +164,10 @@ function showSlct( $slct )
 }
 
 
-function refreshCaptcha()
-{
-	var img = document.images['captchaimg'];
-	img.src = img.src.substring(0,img.src.lastIndexOf("/"))+"/"+parseInt(Math.random()*1000);
-}
+//function refreshCaptcha()
+//{
+//	var img = document.images['captchaimg'];
+//	img.src = img.src.substring(0,img.src.lastIndexOf("/"))+"/"+parseInt(Math.random()*1000);
+//}
 
 </script>
