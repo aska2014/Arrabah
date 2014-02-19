@@ -47,14 +47,14 @@ View::composer('premium.banner', function( $view )
 
 
 
-View::composer(array('register.index'), function( $view )
+View::composer(array('profile.edit','register.index'), function( $view )
 {
 	Asset::addPage('form');
 	
 	Asset::addPlugins(array('picker', 'select2'));
 });
 
-View::composer(array('login.index', 'login.reminder', 'login.reset', 'search.members', 'search.jobs'), function( $view )
+View::composer(array('login.index', 'login.reminder', 'login.reset', 'search.members', 'search.jobs', 'register.join_arrabah'), function( $view )
 {
 	Asset::addPage('form');
 });

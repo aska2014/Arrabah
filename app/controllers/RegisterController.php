@@ -89,13 +89,40 @@ class RegisterController extends BaseController{
 			// Send registeration mail to user
 			$this->sendMail( $user );
 
-			// Create messenger to send to user
-			with(new Messenger('لقد قمت بالتسجيل بنجاح', 'برجاء تفقد الإيميل الخاص بك.'))->flash();
-
-			// Redirect to message to user page.
-			return Redirect::route('message-to-user');
+            return $this->afterRegistration($user);
 		}
 	}
+
+    /**
+     * @param User $user
+     */
+    protected function afterRegistration(User $user)
+    {
+        $id = array(
+            'key' => 'YIHUKJDAJX2r$#ewscs',
+            'value' => Crypt::encrypt($user->id)
+        );
+
+        return View::make('register.join_arrabah', compact('id'));
+    }
+
+    /**
+     * @return mixed
+     */
+    public function postJoinArrabah()
+    {
+        $id = Crypt::decrypt(Input::get('YIHUKJDAJX2r$#ewscs'));
+
+        $user = User::find($id);
+        $user->from_arrabah = Input::get('Register.from_arrabah') == 'true' ? 1 : 0;
+        $user->save();
+
+        // Create messenger to send to user
+        with(new Messenger('لقد قمت بالتسجيل بنجاح', 'برجاء تفقد الإيميل الخاص بك.'))->flash();
+
+        // Redirect to message to user page.
+        return Redirect::route('message-to-user');
+    }
 	
 	/**
 	 * Retrive family.
@@ -251,7 +278,10 @@ class RegisterController extends BaseController{
 		if(isset($inputs['from_arrabah'])) {
 
 			$inputs['from_arrabah'] = $inputs['from_arrabah'] == 'true' ? 1 : 0;
-		}
+		}else {
+
+            $inputs['from_arrabah'] = 0;
+        }
 
 		$inputs = UserValidator::filter( $inputs );
 

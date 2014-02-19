@@ -1,6 +1,7 @@
 <?php namespace Membership\Family;
 
 use Eloquent;
+use Illuminate\Support\Facades\DB;
 use Membership\User\User;
 use Membership\User\Algorithm as UserAlgorithm;
 
@@ -33,6 +34,22 @@ class Family extends Eloquent {
      * @var bool
      */
     protected $softDelete = true;
+
+    /**
+     * @return mixed
+     */
+    public function getNumberOfUsersSmallerThan18()
+    {
+        return $this->users()->where('day_of_birth', '>=', DB::raw('CURDATE() - INTERVAL 18 YEAR'))->count();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNumberOfUsersGreaterThan18()
+    {
+        return $this->users()->where('day_of_birth', '<', DB::raw('CURDATE() - INTERVAL 18 YEAR'))->count();
+    }
 
     /**
      * Get family by name

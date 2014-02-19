@@ -57,6 +57,8 @@ Route::myController(array(
 ));
 
 
+Route::post('/join-arrabah.html', array('as' => 'join-arrabah.post', 'uses' => 'RegisterController@postJoinArrabah'));
+
 
 Route::group(array('before' => 'normalUser'), function()
 {
@@ -76,6 +78,11 @@ Route::group(array('before' => 'normalUser'), function()
 
 		return View::make('profile.index')->with('profileUser', $user);
 	}))->where('id', '[0-9]+');
+
+
+    Route::myController(array(
+        'profile.edit' => array('edit-profile.html', 'EditProfileController@getIndex,postIndex')
+    ));
 
 	Route::get('logout.html', array('as' => 'logout', function()
 	{

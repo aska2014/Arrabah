@@ -17,8 +17,10 @@
 		@endif
 		<div class="clr"></div>
 		@if(! $authUser->same( $profileUser ))
-		<a href="{{ URL::sendMessageTo($profileUser) }}"><div class="send-message">أرسل رسالة</div></a>
+        <a href="{{ URL::sendMessageTo($profileUser) }}"><div class="send-message">أرسل رسالة</div></a>
 		@endif
+
+        <a href="{{ URL::route('profile.edit') }}"><div class="send-message">تعديل</div></a>
 	</div>
 
 	<div class="profile-info">

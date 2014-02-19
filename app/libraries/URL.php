@@ -100,11 +100,11 @@ class URL extends LaravelURL {
 		else                      return static::route('contact-us');
 	}
 
-	public static function profile( MemberInterface $user )
-	{
-		if($user instanceof User) return static::route('profile', $user->id);
-		else                      return static::route('admin-profile');
-	}
+    public static function profile( MemberInterface $user )
+    {
+        if($user instanceof User) return static::route('profile', $user->id);
+        else                      return static::route('admin-profile');
+    }
 
 	public static function userEvents( MemberInterface $user )
 	{

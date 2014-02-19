@@ -74,13 +74,13 @@
 			</div>
 			<div class="clr"></div>
 
-			<div class="row">
-				<div class="all">
-					<div class="label" style="width:150px;">هل انت من أبناء عرابة؟</div>
-					<input type="radio" id="true-arrabah" name="Register[from_arrabah]" value="true" /> نعم
-					<input type="radio" id="false-arrabah" name="Register[from_arrabah]" value="false" /> لا
-				</div>
-			</div>
+<!--			<div class="row">-->
+<!--				<div class="all">-->
+<!--					<div class="label" style="width:150px;">هل انت من أبناء عرابة؟</div>-->
+<!--					<input type="radio" id="true-arrabah" name="Register[from_arrabah]" value="true" /> نعم-->
+<!--					<input type="radio" id="false-arrabah" name="Register[from_arrabah]" value="false" /> لا-->
+<!--				</div>-->
+<!--			</div>-->
 			<div class="clr"></div>
 			
 			<div class="form-header">
