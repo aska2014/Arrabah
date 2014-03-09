@@ -1,4 +1,20 @@
-	<div class="clr"></div>
+
+    <div style="padding: 10px; margin-top:20px;">
+
+        <div>
+            <strong>عدد المشتركين :</strong>
+            <strong style="margin-right:5px; color: #28579C; font-family: 'Comic Sans MS', cursive, sans-serif; letter-spacing: 4px;">
+                {{ $userCount }}
+            </strong>
+        </div>
+
+        <div style="margin-top:5px;">
+            <strong>عدد الزوار</strong>
+            <img style="position:relative; top:4px; right:5px;" src="http://www.easycounter.com/counter.php?kareem3d" border="0" alt="Counter">
+        </div>
+    </div>
+
+    <div class="clr"></div>
 
 
 	<div id="footer">

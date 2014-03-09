@@ -36,6 +36,9 @@ function show_argent(){
             $("#argent_news").show('slow');
             $("#argent_news > h3").html("<a href='" + rssItem.link + "' target='_blank'>" + rssItem.title + "</a>");
             $("#argent_news > #argent_body").html(rssItem.description);
+
+            // Every one minute and a half
+            setTimeout('show_argent()', 90000);
         }
     }
 }

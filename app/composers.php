@@ -1,5 +1,6 @@
 <?php
 
+use Membership\User\Algorithm;
 use Social\Event\Event;
 use Social\Message\Message;
 
@@ -21,6 +22,8 @@ View::composer(array('master.header', 'master.footer'), function( $view )
 	$view->newMessages = Auth::user() ? Message::countNotSeenMessages(Auth::user()) : 0;
 
 	$view->headerSocials = array('facebook', 'twitter', 'linkedin', 'youtube');
+
+    $view->userCount = Algorithm::accepted(Algorithm::query())->count();
 
     Asset::addPlugin('cookie');
 });
