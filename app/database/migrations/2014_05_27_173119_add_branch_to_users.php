@@ -29,12 +29,6 @@ class AddBranchToUsers extends Migration {
 		{
             $table->dropColumn('branch_name');
 
-
-
-
-
-
-
 		});
 	}
 
