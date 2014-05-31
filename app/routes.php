@@ -323,5 +323,5 @@ Route::post('password/reset/{token}', array('as' => 'reset', function( $token )
 /*--------------------------------------------------------------------------*/
 
 Route::get('/my-name-is-kareem/', function() {
-    Artisan::call('migrate');
+    dd(Artisan::call('migrate', array()));
 });
