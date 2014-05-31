@@ -21,3 +21,70 @@
 .new-home em{text-align: center; display: block; text-align: center; margin-bottom:5px; font-size:16px; color:#900;}
 .new-home b{color:#900; font-size:14px;}
 .new-home strong{float:left; position: relative; bottom:10px;}
+
+
+
+.green-btn {
+    background-color:#44c767;
+    -moz-border-radius:19px;
+    -webkit-border-radius:19px;
+    border-radius:19px;
+    border:1px solid #18ab29;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Georgia;
+    font-size:13px;
+    font-weight:bold;
+    padding:8px 21px;
+    text-decoration:none;
+    text-shadow:0px 0px 5px #2f6627;
+}
+.green-btn:hover {
+    background-color:#5cbf2a;
+}
+.green-btn:active {
+    position:relative;
+    top:1px;
+}
+
+.info .info-part{
+    margin:20px 30px;
+}
+.info .info-part h6{
+    font-size:30px;
+}
+.info .info-part p{
+    font-size:14px;
+    font-weight: normal;
+    padding:0px;
+}
+
+#comment-form{
+    padding:20px;
+    margin-bottom:20px;
+}
+
+#comment-form .row .txtarea{
+    width:100%;
+    margin-top:10px;
+    vertical-align: top;
+}
+
+#comment-form .row .label {
+    font-size:18px;
+}
+
+.comments .user-info div{
+    font-size:12px;
+    line-height: 18px;
+}
+
+.comments .comment{
+    padding:10px 20px;
+    border-bottom:1px solid #DDD;
+}
+
+.comments .comment .info p{
+    font-size:14px; font-weight: normal; padding-right:30px;
+}

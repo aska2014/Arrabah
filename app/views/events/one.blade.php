@@ -32,7 +32,7 @@
 
 	<div class="clr"></div>
 
-	@if($event->gallery)
+	@if($event->gallery && $event->gallery->hasImages())
 	<div class="galleries">
 
 		<div class="clr"></div>
@@ -46,6 +46,43 @@
 	@endif
 
 	<div class="clr"></div>
+
+    <div class="comments">
+        @foreach($event->comments()->orderBy('id', 'DESC')->take(15)->get()->reverse() as $comment)
+        <div class="comment">
+
+            <div class="user-info" style="margin-top:0px;">
+                <div><b>العضو: </b> <a href="{{ URL::profile($comment->user) }}">{{ $comment->user->getTwoName() }}</a></div>
+
+                @if(EasyDate::valid($comment->getDate()))
+                <div>{{ EasyDate::arabic('j F, Y', $comment->getDate()) }}</div>
+                @endif
+            </div>
+
+            <div class="info">
+                <p>{{ $comment->description }}</p>
+            </div>
+
+        </div>
+        @endforeach
+    </div>
+
+    <form action="{{ URL::route('comment.create') }}" method="POST" id="comment-form">
+        <div class="row">
+            <div class="right">
+                <textarea type="text" name="Comment[description]" class="txtarea" rows="5" placeholder="نص التعليق" ></textarea>
+            </div>
+
+            <input type="hidden" name="Comment[c_type]" value="{{ Crypt::encrypt('Social\Event\Event') }}"/>
+            <input type="hidden" name="Comment[c_id]" value="{{ Crypt::encrypt($event->id) }}"/>
+        </div>
+
+        <div class="clr"></div>
+
+        <div class="row buttons">
+            <input type="submit" class="register-btn grey-btn" value="إضافة تعليق" />
+        </div>
+    </form>
 </div><!-- END of white-box -->
 
 @stop

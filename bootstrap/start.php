@@ -28,7 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('*arrabah.loc'),
+	'local' => array('Kareem-PC'),
 	'arrabah' => array('*arrabah.net'),
 
 ));

@@ -40,7 +40,7 @@
 		<div class="boxgrid caption">
 			<a href="{{ URL::gallery($gallery) }}">
 				@if($gallery->getMainImage())
-			    <img src="{{ $gallery->getMainImage()->getUrl( 145, 145 ) }}" width="145" height="145" />
+                <a href="{{ URL::image($gallery->getMainImage()) }}"><img src="{{ $gallery->getMainImage()->getUrl( 145, 145 ) }}" width="145" height="145" /></a>
 				@else
 			    <img src="{{ AlbumsManager::defaultImage( 'gallery.image' ) }}" width="145" height="145" />
 				@endif

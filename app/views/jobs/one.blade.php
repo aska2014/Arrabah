@@ -12,18 +12,39 @@
 
 
 		<div class="info">
-			<p>
-				{{ $job->description }}
-			</p>
+            <div class="info-part">
+                <h4>مكان الوظيفة</h4>
+                <p>
+                    {{ $job->place }}
+                </p>
+            </div>
+            <div class="clr"></div>
+            <div class="info-part">
+                <h4>تفاصيل الوظيفة</h4>
+                <p>
+                    {{ $job->description }}
+                </p>
+            </div>
+            <div class="clr"></div>
+            <div class="info-part">
+                <h4>الخبرات المطلوبة</h4>
+                <p>
+                    {{ $job->professions }}
+                </p>
+            </div>
 		</div>
 		<div class="img">
 			@if($image = $job->image)
-			<img src="{{ $image->getUrl( 113, 94 ) }}" width="113" />
+            <a href="{{ URL::image($image) }}"><img src="{{ $image->getUrl( 113, 94 ) }}" width="113" /></a>
 			@endif
 		</div>
 		<div class="clr"></div>
 
 		@include('social.facebook')
+
+        <Br /><Br/>
+<!--        <a href=" URL::route('apply-job', $job->id) " class="green-btn" style="float:left; margin:30px; text-decoration: none;">تقدم للوظيفة &#8592;</a>-->
+        <div class="clr"></div>
 	</div>
 	<div class="clr"></div>
 </div><!-- END of white-box -->

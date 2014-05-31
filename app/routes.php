@@ -21,15 +21,6 @@ use Gallery\Image\Algorithm as ImageAlgorithm;
 use Website\Tracker\Tracker as Tracking;
 
 
-Route::get('/test', function()
-{
-//    Config::set('arrabah.app.debug', true);
-
-    $xml = simplexml_load_file('https://www.facebook.com/feeds/page.php?format=atom10&id=113791238657176');
-
-    dd($xml);
-});
-
 Route::get('/', array('as' => 'home', function()
 {
 	$homeWelcome  = Place::getByIdentifier('home_welcome');
@@ -62,6 +53,8 @@ Route::post('/join-arrabah.html', array('as' => 'join-arrabah.post', 'uses' => '
 
 Route::group(array('before' => 'normalUser'), function()
 {
+    Route::post('add-comment', array('as' => 'comment.create', 'uses' => 'CommentController@create'));
+
 	Route::myController(array(
 
 		'update-online'    => array('update-online/{route}', 'OnlineController@updateOnline'),
@@ -190,6 +183,7 @@ Route::myController(array(
 	'jobs' => array('jobs.html', 'JobController@index,create'),
 	'user-jobs' => array('jobs-{id}.html', 'JobController@user'),
 	'job' => array('job-{id}.html', 'JobController@show'),
+//    'apply-job' => array('apply-job-{id}.html', 'JobController@apply')
 
 ));
 
@@ -328,15 +322,4 @@ Route::post('password/reset/{token}', array('as' => 'reset', function( $token )
 /*--------------------------------------------------------------------------*/
 /*--------------------------------------------------------------------------*/
 
-
-
-
-Route::get('test', function()
-{
-
-
-        // Place::create(array(
-        //     'identifier' => 'be_premium',
-        //     'name'       => 'صفحة الإشتراك مع موقع عرابة'
-        // ));
-});
+Route::get('/');

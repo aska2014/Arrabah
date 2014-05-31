@@ -50,7 +50,7 @@ View::composer('premium.banner', function( $view )
 
 
 
-View::composer(array('profile.edit','register.index'), function( $view )
+View::composer(array('profile.edit','register.index', 'jobs.apply'), function( $view )
 {
 	Asset::addPage('form');
 	

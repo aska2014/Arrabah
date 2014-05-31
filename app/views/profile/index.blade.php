@@ -44,12 +44,22 @@
 					<div class="right-row">
 						<div class="key">أسم الجد:</div><div class="value">{{ $profileUser->grand_father_name }}</div>
 					</div>
-					<div class="left-row">
+                    <div class="left-row">
                         @if($profileUser->family)
-						<div class="key">أسم العائلة:</div><div class="value">{{ $profileUser->family->name }}</div>
+                        <div class="key">أسم العائلة:</div><div class="value">{{ $profileUser->family->name }}</div>
                         @endif
-					</div>
+                    </div>
 				</div>
+
+                <div class="clr"></div>
+
+                @if($profileUser->branch_name)
+                <div class="row">
+                    <div class="right-row">
+                        <div class="key">أسم الفرع:</div><div class="value">{{ $profileUser->branch_name }}</div>
+                    </div>
+                </div>
+                @endif
 
 				<div class="clr"></div>
 			</div>

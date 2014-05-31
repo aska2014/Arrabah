@@ -49,30 +49,36 @@
 			<div class="clr"></div>
 			
 			<div class="row">
-				<div class="right">
-					<div class="label">اسم الجد</div>
-					<input type="text" class="txt" name="Register[grand_father_name]" value="{{ Input::old('Register.grand_father_name') }}" />
-				</div>
-				<div class="left">
-					<div class="label">اسم العائلة</div>
-
-					<div id="family-slct-div" style="float:right;">
-						<select class="normal-slct basic-select" id="family-slct" name="Family[id]">
-							<option value=""></option>
-							@foreach($families as $family)
-								<option value="{{ $family->id }}">{{ $family->name }}</option>
-							@endforeach
-						</select>
-					</div>
-					<input type="text" class="txt" id="family-txt" name="Family[name]" /><br />
-					<div class="clr"></div>
-					<div class="info" style="">
-						<a style="" href="javascript:void(0)" id="family-change-link">لم تجد عائلتك هنا ؟</a>
-					</div>
-					
-				</div>
+                <div class="right">
+                    <div class="label">اسم الجد</div>
+                    <input type="text" class="txt" name="Register[grand_father_name]" value="{{ Input::old('Register.grand_father_name') }}" />
+                </div>
+                <div class="left">
+                    <div class="label">اسم الفرع</div>
+                    <input type="text" class="txt" name="Register[branch_name]" value="{{ Input::old('Register.branch_name') }}" />
+                </div>
 			</div>
-			<div class="clr"></div>
+            <div class="clr"></div>
+            <div class="row">
+                <div class="left">
+                    <div class="label">اسم العائلة</div>
+
+                    <div id="family-slct-div" style="float:right;">
+                        <select class="normal-slct basic-select" id="family-slct" name="Family[id]">
+                            <option value=""></option>
+                            @foreach($families as $family)
+                            <option value="{{ $family->id }}">{{ $family->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <input type="text" class="txt" id="family-txt" name="Family[name]" /><br />
+                    <div class="clr"></div>
+                    <div class="info" style="">
+                        <a style="" href="javascript:void(0)" id="family-change-link">لم تجد عائلتك هنا ؟</a>
+                    </div>
+
+                </div>
+            </div>
 
 <!--			<div class="row">-->
 <!--				<div class="all">-->

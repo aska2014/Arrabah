@@ -12,7 +12,7 @@ class JobValidator implements ValidatorInterface {
 	 */
 	public static function filter( array $inputs )
 	{
-		return static::stripTags(\array_get_keys($inputs, array('title', 'description')));
+		return static::stripTags(\array_get_keys($inputs, array('title', 'description', 'professions', 'place')));
 	}
 
 	private static function stripTags( $inputs )
@@ -35,12 +35,16 @@ class JobValidator implements ValidatorInterface {
 		return Validator::make($inputs, array(
 
 			'title' => 'required',
-			'description' => 'required'
+            'description' => 'required',
+            'professions' => 'required',
+            'place' => 'required',
 
 		), array(
 
 			'title.required' => 'يجب إدخال عنوان الوظيفة.',
-			'description.required' => 'يجب إدخال تفاصيل الوظيفة.',
+            'description.required' => 'يجب إدخال تفاصيل الوظيفة.',
+            'professions.required' => 'يجب إدخال الخبرات المطلوبة.',
+            'place.required' => 'يجب إدخال مكان الوظيفة',
 
 		));
 	}

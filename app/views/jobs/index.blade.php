@@ -18,14 +18,22 @@
 
 				<div class="section-hidden padding-section">
 
-					<div class="form-row">
-						<div class="key">عنوان الوظيفة*</div><div class="value"><input type="text" class="txt" name="Job[title]" value="{{ Input::old('Job.title') }}" /></div>
-					</div>
+                    <div class="form-row">
+                        <div class="key">عنوان الوظيفة*</div><div class="value"><input type="text" class="txt" name="Job[title]" value="{{ Input::old('Job.title') }}" /></div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="form-row">
+                        <div class="key">مكان الوظيفة*</div><div class="value"><input type="text" class="txt" name="Job[place]" value="{{ Input::old('Job.place') }}" /></div>
+                    </div>
 					<div class="clr"></div>
-					<div class="form-row">
-						<div class="key">تفاصيل الوظيفة*</div><div class="value"><textarea name="Job[description]" class="txtarea">{{ Input::old('Job.description') }}</textarea></div>
-					</div>
-					<div class="clr"></div>
+                    <div class="form-row">
+                        <div class="key">تفاصيل الوظيفة*</div><div class="value"><textarea name="Job[description]" class="txtarea">{{ Input::old('Job.description') }}</textarea></div>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="form-row">
+                        <div class="key">الخبرات المطلوبة</div><div class="value"><textarea name="Job[professions]" class="txtarea">{{ Input::old('Job.professions') }}</textarea></div>
+                    </div>
+                    <div class="clr"></div>
 					<div class="form-row">
 						<div class="key">إرفاق صورة</div><div class="value"><input type="file" name="Job[image]" /></div>
 						<div class="info">يمكنك تركها خالية</div>

@@ -7,6 +7,8 @@ return array(
 	'user' => array(
 		'profile' => array(
 
+            IC::make('users/normal/user{user}.jpg'),
+
 			IC::make('users/122x122/user{user}.jpg')->manipulate(function($image)
 			{
 				$image->grab(145, 145);
@@ -14,6 +16,8 @@ return array(
 		),
 
 		'gallery' => array(
+
+            IC::make('users/gallery{gallery}/normal/user{user}.jpg'),
 
 			IC::make('user/gallery{gallery}/113x94/user{user}.jpg')->manipulate(function($image)
 			{
@@ -27,6 +31,8 @@ return array(
 
 	'job' => array(
 		'main' => array(
+
+            IC::make('jobs/normal/job{job}.jpg'),
 
 			IC::make('jobs/113x94/job{job}.jpg')->manipulate(function($image)
 			{

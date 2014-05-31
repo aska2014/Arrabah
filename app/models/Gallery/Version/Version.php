@@ -178,6 +178,12 @@ class Version extends Eloquent {
         parent::delete();
     }
 
+
+    public function getUrlAttribute()
+    {
+        return str_replace('public/register.html/', '', $this->attributes['url']);
+    }
+
     /**
      * Get url for this image
      *

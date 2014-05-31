@@ -13,7 +13,8 @@ class UserValidator implements ValidatorInterface {
 	{
 		return static::stripTags(\array_get_keys($inputs, array(
 			'username', 'first_name', 'father_name', 'grand_father_name', 'email', 'password', 
-			'age_days', 'day_of_birth', 'place_of_birth', 'telephone_no', 'sex', 'from_arrabah'
+			'age_days', 'day_of_birth', 'place_of_birth', 'telephone_no', 'sex', 'from_arrabah',
+            'branch_name'
 		)));
 	}
 
@@ -39,7 +40,8 @@ class UserValidator implements ValidatorInterface {
 			'username'          => 'required|unique:users|min:6',
 			'first_name'        => 'required',
 			'father_name'       => 'required',
-			'grand_father_name' => 'required',
+            'grand_father_name' => 'required',
+            'branch_name'       => 'required',
 			'email'             => 'required|email|unique:users',
 			'sex'               => 'required|in:male,female',
 			'from_arrabah'      => 'required|in:1,0',
@@ -57,6 +59,7 @@ class UserValidator implements ValidatorInterface {
 			'first_name.required'        => 'يجب إدخال الأسم الاول.',
 			'father_name.required'       => 'يجب إدخال اسم الاب.',
 			'grand_father_name.required' => 'يجب إدخال اسم الجد.',
+            'branch_name.required'       => 'يجب إدخال اسم الفرع',
 			'email.required'             => 'يجب إدخال الإيميل.',
 			'email.email'                => 'هذا الإيميل غير صحيح.',
 			'email.unique'               => 'هذا الإيميل مستخدم من قبل.',

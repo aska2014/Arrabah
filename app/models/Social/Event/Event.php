@@ -162,6 +162,14 @@ class Event extends Eloquent implements AcceptableInterface, OwnedByUserInterfac
     }
 
     /**
+     * @return mixed
+     */
+    public function comments()
+    {
+        return $this->morphMany('Social\Comment\Comment', 'commentable');
+    }
+
+    /**
      * Belongs to user.
      *
      * @return Query

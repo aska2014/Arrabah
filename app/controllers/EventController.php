@@ -46,7 +46,6 @@ class EventController extends BaseController {
 
 	public function create()
 	{
-
 		$user = $this->validateUser();
 
 		$inputs = $this->validate(Input::get('Event', array()));

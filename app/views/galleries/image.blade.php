@@ -17,6 +17,7 @@
 						<form action="{{ URL::route('replace-image') }}" method="POST" enctype="multipart/form-data">
 							<b>أستبدال الصورة: </b><input type="file" name="Profile[image]" /><br />
 							<input type="submit" value="إستبدال" class="sbmt" />
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
 						</form>
 					</div>
 
@@ -48,7 +49,7 @@
 		<div class="img" style="float:none; text-align:center">
 
 			@if($image->hasImage())
-				<img src="{{ $image->getLargestUrl() }}" style="max-width:400px;" />
+                <a href="{{ $image->getLargestUrl() }}"><img src="{{ $image->getLargestUrl() }}" style="max-width:600px;" /></a>
 
 				@include('social.facebook')
 			@else

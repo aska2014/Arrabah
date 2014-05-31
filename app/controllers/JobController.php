@@ -15,6 +15,17 @@ class JobController extends BaseController {
         $this->beforeFilter('csrf', array('on' => 'post'));
 	}
 
+
+    public function apply( $id )
+    {
+        $job = Job::findOrFail( $id );
+
+        $job->failIfNotAccepted();
+
+        return View::make('jobs.apply')->with('job', $job);
+    }
+
+
 	public function index()
 	{
 		return View::make('jobs.index')->with('jobs', Job::getAccepted(Job::latest())->paginate(10))
