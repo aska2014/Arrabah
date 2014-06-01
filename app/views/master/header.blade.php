@@ -98,7 +98,7 @@
 			<div id="header-menu">
 				<ul>
                     <li><a href="{{ URL::route('home') }}">الرئيسية</a></li>
-                    <li><a href="{{ URL::route('introduction') }}">المقدمة</a></li>
+                    <li><a href="{{ URL::to('introduction.html') }}">المقدمة</a></li>
 					@if($aboutPage)
 					<li>
 						<a href="{{ URL::page($aboutPage) }}">{{ $aboutPage->title }}</a>
