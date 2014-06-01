@@ -4,6 +4,7 @@ use Eloquent;
 use Gallery\Version\Version;
 use Gallery\Gallery\Gallery;
 
+use Membership\MemberInterface;
 use Membership\User\User;
 use Membership\Admin\Admin;
 
@@ -72,7 +73,7 @@ class Image extends Eloquent implements AcceptableInterface, OwnedByUserInterfac
      */
     public function failIfNotAccepted()
     {
-        if(! $this->accepted)
+        if(! $this->accepted || $this->getUser() instanceof Admin)
 
             throw new \NotAcceptedException;
     }
