@@ -19,6 +19,10 @@
 
 @section('styles')
 <style type="text/css">
-.white-box .description{ margin:20px; }
+    .white-box .description{ margin:20px; }
+    .text-center{text-align: center}
+    .text-left{text-align: left}
+    .strong-text{font-weight:bold; line-height:38px;}
 </style>
+
 @stop
