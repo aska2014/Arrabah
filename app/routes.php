@@ -35,10 +35,10 @@ Route::get('/', array('as' => 'home', function()
 }));
 
 
-Route::get('/introduction.html', array('as' => 'introduction', function()
-{
-    return View::make('introduction.index');
-}));
+//Route::get('/introduction.html', array('as' => 'introduction', function()
+//{
+//    return View::make('introduction.index');
+//}));
 
 
 Route::myController(array(
